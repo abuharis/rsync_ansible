@@ -1,6 +1,6 @@
-###File synchronization automation using ansble
+# File synchronization automation using ansble
 
-##Usage
+## Usage
 
 ```
 $ansible-playbook -i hosts site.yml
