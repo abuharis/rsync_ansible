@@ -1,0 +1,13 @@
+
+- name: Installing rsync 
+  yum: 
+    name: rsync
+    state: latest
+
+- name: Synchronizing the servers
+  synchronize:
+    perms: no                                     #Donot preserve the attributes with the copied location
+    mode: pull                                    #Pulls to destination from source
+    src: /file/location/path/
+    dest: /destination/path/
+  delegate_to: "{{groups['test_servers'][1]}}"    #Destination server

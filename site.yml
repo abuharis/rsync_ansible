@@ -1,0 +1,9 @@
+---
+
+- name: Installing rsync
+  hosts: "{{groups['test_servers'][0]}}"  #The first entry in inventory
+  user: vagrant
+  become: yes                             #Sudo is required to install the 'rsync' package
+  roles:
+    - pckg_rsync                          #The role is found under roles/
+  tags: rsync
